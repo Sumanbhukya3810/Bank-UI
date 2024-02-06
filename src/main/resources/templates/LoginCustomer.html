@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h3>User Login</h3>
+
+    <!-- User login form -->
+    <form th:action="@{/customers/ValidateCustomer}" th:object="${customer}" method="post">k,.l9
+        <table>
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" th:field="*{userName}" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" th:field="*{password}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Display error message if authentication fails -->
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+    <!-- Link to go back to the login page -->
+    <p>
+        <a th:href="@{/customers/showLoginPage}">Back to Login</a>
+    </p>
+</body>
+</html>

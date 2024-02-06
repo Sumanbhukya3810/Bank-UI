@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h3>Create Account</h3>
+
+   
+    <!-- Customer creation form -->
+    <form th:action="@{/customers/createAccount}" th:object="${AccountObj}" method="post">
+        <table>
+        
+            
+            
+          
+            <tr>
+                <td>Account Type:</td>
+                <td><input type="text" th:field="*{accountType}" /></td>
+            </tr>
+              <tr>
+                <td>Current Balance:</td>
+                <td><input type="text" th:field="*{currentBalance}" /></td>
+            </tr>
+            <tr>
+                <td>Cust Id:</td>
+                <td><input type="text" th:field="*{custId}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Create Account" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Link to go back to the login page -->
+      <p>
+        <a th:href="@{/customers/validateUser}">Back to Login</a>
+    </p>
+   
+</body>
+</html>

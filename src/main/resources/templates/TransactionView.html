@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h3>TransactionView</h3>
+
+    <!-- User login form -->
+    <form th:action="@{/Transfer/viewTransactions}" th:object="${Trasaction}" method="post">
+        <table>
+            <tr>
+                <td>AccountId:</td>
+                <td><input type="text" th:field="*{accountId}" /></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><input type="submit" value="TransactionData" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Display error message if authentication fails -->
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+    <!-- Link to go back to the login page -->
+    <p>
+        <a th:href="@{/customers/showLoginPage}">Back to Login</a>
+    </p>
+</body>
+</html>

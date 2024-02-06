@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Transactions</title>
+<!-- Include your CSS or Bootstrap if needed -->
+</head>
+<body>
+
+	<h2>Transaction History</h2>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Transaction ID</th>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Amount</th>
+				
+				<!-- Add more columns as needed -->
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Loop through transactions and display details -->
+			<tr th:each="transaction : ${transactions}">
+				<td th:text="${transaction.transactionId}"></td>
+				<td
+					th:text="${#temporals.format(transaction.transactionDate, 'dd-MM-yyyy HH:mm:ss')}"></td>
+				<td th:text="${transaction.description}"></td>
+				<td th:text="${transaction.transactionAmount}"></td>
+				
+				<!-- Add more columns as needed -->
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Add navigation or other elements as needed -->
+
+</body>
+</html>

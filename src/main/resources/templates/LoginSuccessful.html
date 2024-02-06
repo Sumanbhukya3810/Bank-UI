@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Successful</title>
+</head>
+<body>
+	<h3>Login Successful Page</h3>
+	<p th:text="${message}"></p>
+	<p th:text="${showCreateCustomerButton}"></p>
+
+    <!-- Check if the button should be displayed -->
+    <div th:if="${showCreateCustomerButton}">
+        <a th:href="@{/customers/createCustomer}">
+            <button>Create Customer</button>
+        </a>
+    </div>
+	
+</body>
+</html>

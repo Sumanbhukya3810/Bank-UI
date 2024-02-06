@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h3>User Operations</h3>
+
+    <!-- User login form -->
+    <form th:action="@{/Operation/Transfer1}" th:object="${Transfer}" method="post">
+        <table>
+	
+            <tr>
+                <td>FromAccountNumber:</td>
+                <td><input type="text" th:field="*{fromAccountNumber}" /></td>
+            </tr>
+            <tr>
+                <td>ToAccountNumber:</td>
+                <td><input type="text" th:field="*{toAccountNumber}" /></td>
+            </tr>
+            <tr>
+                <td>TransferAmount:</td>
+                <td><input type="text" th:field="*{transferAmount}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Transfer" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Display error message if authentication fails -->
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+    <!-- Link to go back to the login page -->
+    <p>
+        <a th:href="@{/customers/showLoginPage}">Back to Login</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+</head>
+<body>
+    <h3>Create Customer</h3>
+
+   
+    <!-- Customer creation form -->
+    <form th:action="@{/customers/createCustomer}" th:object="${customerObj}" method="post">
+        <table>
+        
+            
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" th:field="*{firstName}" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" th:field="*{lastName}" /></td>
+            </tr>
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" th:field="*{userName}" /></td>
+            </tr>
+            <tr>
+                <td>password:</td>
+                <td><input type="text" th:field="*{password}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Create Customer" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Link to go back to the login page 
+      <p>
+        <a th:href="@{/customers/validateUser}">Back to Login</a>
+    </p>  -->
+    <h3>Customer created Successful </h3>
+	<p th:text="${message}"></p>
+	<p th:text="${showCreateAccountButton}"></p>
+
+    <!-- Check if the button should be displayed -->
+    <div th:if="${showCreateAccountButton}">
+        <a th:href="@{/customers/createAccount}">
+            <button>Create Account</button>
+        </a>
+    </div>
+</body>
+</html>
