@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
     <h3>Create Account</h3>
@@ -25,7 +26,7 @@
             </tr>
             <tr>
                 <td>Cust Id:</td>
-                <td><input type="text" th:field="*{custId}" /></td>
+                <td><input type="text" th:field="*{accountId}" /></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Create Account" /></td>
@@ -35,7 +36,7 @@
 
     <!-- Link to go back to the login page -->
       <p>
-        <a th:href="@{/customers/validateUser}">Back to Login</a>
+        <a th:href="@{/customers/showCustomerLoginPage}">Back to Login</a>
     </p>
    
 </body>

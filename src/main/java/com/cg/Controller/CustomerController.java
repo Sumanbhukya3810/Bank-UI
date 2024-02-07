@@ -35,10 +35,6 @@ public class CustomerController {
 		ModelAndView loginPageView = new ModelAndView("Login", "fname", "Bhagi");
 		return loginPageView;
 	}
-	@GetMapping("/home")
-	public String home() {
-		return "This is Home Page";
-	}
 
 	@RequestMapping("/showCustomerLoginPage")
 	public ModelAndView showLoginPage() {
@@ -89,7 +85,6 @@ public class CustomerController {
 	@RequestMapping(value = "/createCustomer", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView createCustomer(@ModelAttribute("customerObj") @Validated Customer customer, BindingResult error)
 			throws CustomerException {
-
 
 		customerService.createCustomer(customer);
 
