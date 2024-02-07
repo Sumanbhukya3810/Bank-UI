@@ -35,6 +35,10 @@ public class CustomerController {
 		ModelAndView loginPageView = new ModelAndView("Login", "fname", "Bhagi");
 		return loginPageView;
 	}
+	@GetMapping("/home")
+	public String home() {
+		return "This is Home Page";
+	}
 
 	@RequestMapping("/showCustomerLoginPage")
 	public ModelAndView showLoginPage() {
