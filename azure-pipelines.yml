@@ -14,8 +14,8 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'package'
+    options: '-DskipTests=true'   # Correct way to skip tests using system property
     mavenOptions: '-Xmx3072m'
-    options: 'Dskiptests=true'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.17'
     jdkArchitectureOption: 'x64'
