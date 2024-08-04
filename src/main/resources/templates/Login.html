@@ -15,7 +15,7 @@ Login Details
     </tr>
     <tr>
        <td>Password</td>
-       <td><input type="text" th:field="*{password}" /></td>
+       <td><input type="password" th:field="*{password}" /></td>
     </tr>
     <tr>
        <td><input type="submit" value="Login" /></td>
@@ -25,5 +25,12 @@ Login Details
 <hr size="3" color="green"/>
 <h4 th:text="${msg}"></h4>
 <script src="js/login.js"></script>
+    <!-- Display error message if authentication fails -->
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+    <!-- Link to go back to the login page -->
+    <p>
+        <a th:href="@{/}">Back to Login</a>
+    </p>
 </body>
 </html>

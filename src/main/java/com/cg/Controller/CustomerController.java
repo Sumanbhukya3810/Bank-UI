@@ -35,6 +35,12 @@ public class CustomerController {
 		ModelAndView loginPageView = new ModelAndView("Login", "fname", "Bhagi");
 		return loginPageView;
 	}
+//	@GetMapping("/showAdminLoginPage")
+//	public String dispLoginPage(Model model) {
+//	    model.addAttribute("loginObj", new User()); // Initialize the User object
+//	    model.addAttribute("fname", "Bhagi"); // Optional attribute
+//	    return "Login"; // Return the name of the Thymeleaf template
+//	}
 
 	@RequestMapping("/showCustomerLoginPage")
 	public ModelAndView showLoginPage() {
@@ -67,7 +73,7 @@ public class CustomerController {
 	}
 
 	@PostMapping(value = "/validateAdmin")
-	public ModelAndView validateCustomer(@ModelAttribute("UserObj") User user, @Validated User ur, BindingResult error)
+	public ModelAndView validateCustomer(@ModelAttribute("loginObj") User user, @Validated User ur, BindingResult error)
 			throws CustomerException// throws MovieCatlogException
 	{
 		if (error.hasErrors()) {
