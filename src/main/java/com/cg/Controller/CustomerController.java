@@ -110,5 +110,15 @@ public class CustomerController {
 		return new ModelAndView("CreateAccount", "message", "Account created successfully");
 
 	}
+    @GetMapping("/logout")
+    public ModelAndView logout() {
+//        // Invalidate the current session or clear authentication
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        if (authentication != null) {
+//            SecurityContextHolder.clearContext();
+//        }
 
+        // Redirect to the logout confirmation page
+        return new ModelAndView("logout");
+    }
 }

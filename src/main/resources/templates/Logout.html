@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logout</h1>
+        <p>Are you sure you want to log out?</p>
+        <form action="/logout" method="post">
+            <table>
+                <tr>
+                    <td><input type="submit" value="Logout" /></td>
+                </tr>
+            </table>
+        </form>
+        <hr size="3" color="green"/>
+        <p class="error-message" id="error-message"></p>
+        <p>
+            <a href="/">Back to Login</a>
+        </p>
+    </div>
+    <script src="js/logout.js"></script>
+    <script>
+        // Display error message if needed
+        var errorMessage = document.getElementById('error-message');
+        if (errorMessage.textContent) {
+            errorMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

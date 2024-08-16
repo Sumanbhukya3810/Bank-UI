@@ -1,19 +1,27 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import React, { useState } from 'react';
+import { TextField, Button, Box, Typography, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './style.css'; // Import your CSS file
 
 const defaultTheme = createTheme();
 
 export default function AdminLogin() {
+  const [error, setError] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const username = formData.get('username');
     const password = formData.get('password');
+
+    // Example validation
+    if (!username || !password) {
+      setError('Please fill in both fields.');
+      return;
+    }
+
+    // Reset error message if valid
+    setError('');
 
     // You can perform further actions with the username and password
     console.log('Username:', username);
@@ -22,16 +30,15 @@ export default function AdminLogin() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container className="container" component="main" maxWidth="xs">
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography className="login-text" component="h1" variant="h5">
             Login Details
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
@@ -44,6 +51,7 @@ export default function AdminLogin() {
               name="username"
               autoComplete="username"
               autoFocus
+              className="form_input"
             />
             <TextField
               margin="normal"
@@ -54,15 +62,18 @@ export default function AdminLogin() {
               type="password"
               id="password"
               autoComplete="current-password"
+              className="form_input"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
+              className="btn_operations"
               sx={{ mt: 3, mb: 2 }}
             >
               Login
             </Button>
+            {error && <div id="error-message">{error}</div>}
           </Box>
         </Box>
       </Container>

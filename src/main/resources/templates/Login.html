@@ -1,36 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+<meta charset="UTF-8">
+<title>Login Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .login-container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 0.5s ease-out;
+  }
+
+  h2 {
+    margin: 0 0 1em 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  td {
+    padding: 0.5em;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.75em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  p {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .back-link {
+    margin-top: 1em;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
 </head>
 <body>
-Login Details
-<form th:action="@{/customers/validateAdmin}" th:object="${loginObj}" method="post">
-  <table>
-    <tr>
-      <td>UserName</td>
-      <td><input type="text" th:field="*{username}" /></td>
-    </tr>
-    <tr>
-       <td>Password</td>
-       <td><input type="password" th:field="*{password}" /></td>
-    </tr>
-    <tr>
-       <td><input type="submit" value="Login" /></td>
-    </tr>
-  </table>
-</form>
-<hr size="3" color="green"/>
-<h4 th:text="${msg}"></h4>
-<script src="js/login.js"></script>
-    <!-- Display error message if authentication fails -->
-    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
-
-    <!-- Link to go back to the login page -->
-    <p>
-        <a th:href="@{/}">Back to Login</a>
-    </p>
+<div class="login-container">
+  <h2>Login Details</h2>
+  <form th:action="@{/customers/validateAdmin}" th:object="${loginObj}" method="post">
+    <table>
+      <tr>
+        <td>UserName</td>
+        <td><input type="text" th:field="*{username}" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" th:field="*{password}" /></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Login" /></td>
+      </tr>
+    </table>
+  </form>
+  <hr size="3" color="green"/>
+  <h4 th:text="${msg}"></h4>
+  <!-- Display error message if authentication fails -->
+  <p th:if="${error}" th:text="${error}" class="error"></p>
+  <!-- Link to go back to the login page -->
+  <p class="back-link">
+      <a th:href="@{/}">Back to Login</a>
+  </p>
+</div>
+<script src="/js/login.js"></script>
 </body>
 </html>

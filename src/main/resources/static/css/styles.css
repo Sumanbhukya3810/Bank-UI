@@ -1,8 +1,10 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Adamina&family=Bungee&family=Poppins&family=Roboto+Mono&display=swap');
 
 html {
   box-sizing: border-box;
 }
+
 body {
   background-image: linear-gradient(
     to bottom,
@@ -12,128 +14,56 @@ body {
     #e2f3ff,
     #d3f1ff
   );
+  font-family: 'Poppins', sans-serif;
 }
+
+.container {
+  margin-top: 50px;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
 .login-text {
-  font-size: medium;
-  font-weight: 500;
-}
-.app {
-  opacity: 0;
-  transition: all 1s;
-}
-
-.balance {
-  font-family: 'Exo 2', sans-serif;
-  font-size: small;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-height: 100px;
-  background-image: linear-gradient(
-    to right,
-    #203560,
-    #2d2544,
-    #28192a,
-    #1b0f16,
-    #000000
-  );
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.movements {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: large;
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: #fefffa;
-  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-}
-
-.movement_row {
-  justify-content: space-between;
-  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
   text-align: center;
-  width: 100%;
-  margin-left: 30px;
-}
-
-.movement_item {
-  width: 33%;
-}
-
-.operations {
-  font-family: 'Poppins', sans-serif;
-}
-
-.transfer {
-  padding-top: 10;
-  padding-bottom: 10;
-  padding-right: 20;
-  padding-left: 20;
-  border-radius: 1rem;
-  background-image: linear-gradient(
-    to right bottom,
-    #b9ff00,
-    #cdfb00,
-    #dff600,
-    #f0f100,
-    #ffec00
-  );
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.loan {
-  padding-top: 10;
-  padding-bottom: 10;
-  padding-right: 20;
-  padding-left: 20;
-  border-radius: 1rem;
-  background-image: linear-gradient(
-    to right bottom,
-    #00ffb1,
-    #45ff94,
-    #6cff74,
-    #8fff4d,
-    #b2ff00
-  );
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.close {
-  padding-top: 10;
-  padding-bottom: 10;
-  padding-right: 20;
-  padding-left: 20;
-  border-radius: 1rem;
-  background-image: linear-gradient(
-    to right bottom,
-    #ff7600,
-    #ff6600,
-    #ff5500,
-    #ff3f00,
-    #ff1d00
-  );
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.current_balance {
-  font-size: 25px;
-}
-
-.balance_amount {
-  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .form_input {
-  background-color: rgba(255, 255, 255, 0.4);
-  font-family: inherit;
-  color: #333;
-  border-radius: 0.3rem;
-  transition: all 0.3s;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.form_input:focus {
+  border-color: #0056b3;
+  outline: none;
 }
 
 .btn_operations {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn_operations:hover {
+  background-color: #004494;
+}
+
+#error-message {
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
 }
