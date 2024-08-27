@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Customer")
@@ -34,7 +33,6 @@ public class Customer {
 
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Customer(int custId, String firstName, String lastName, String userName, String password, Account account) {
 		super();

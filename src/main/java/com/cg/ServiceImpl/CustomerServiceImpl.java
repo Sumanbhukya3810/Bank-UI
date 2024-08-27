@@ -25,7 +25,6 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	@Override
 	public Customer authenticateUser(String username, String password) {
-		// TODO Auto-generated method stub
 	        return customerrepo.findByUsernameAndPassword(username, password);
 	    }
 	

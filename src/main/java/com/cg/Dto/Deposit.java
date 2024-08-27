@@ -6,7 +6,6 @@ public class Deposit {
     
 	public Deposit() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public int getAccountId() {
 		return accountId;

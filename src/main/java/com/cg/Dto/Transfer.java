@@ -7,7 +7,6 @@ public class Transfer {
     
 	public Transfer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Transfer(int fromAccountNumber, int toAccountNumber, float transferAmount) {
 		super();
