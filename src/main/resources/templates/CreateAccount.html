@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
+
 <body>
     <h3>Create Account</h3>
 
-   
+
     <!-- Customer creation form -->
     <form th:action="@{/customers/createAccount}" th:object="${AccountObj}" method="post">
         <table>
-        
-            
-            
-          
             <tr>
                 <td>Account Type:</td>
                 <td><input type="text" th:field="*{accountType}" /></td>
             </tr>
-              <tr>
+            <tr>
                 <td>Current Balance:</td>
                 <td><input type="text" th:field="*{currentBalance}" /></td>
             </tr>
@@ -35,9 +33,10 @@
     </form>
 
     <!-- Link to go back to the login page -->
-      <p>
+    <p>
         <a th:href="@{/customers/showCustomerLoginPage}">Back to Login</a>
     </p>
-   
+
 </body>
+
 </html>
